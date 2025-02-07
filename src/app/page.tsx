@@ -39,14 +39,12 @@ const HomePage = () => {
       </Head>
       <Header />
       <main className="min-h-screen">
-        {/* Hero Section */}
         <section className="relative bg-cover bg-center text-center text-white" style={{ backgroundImage: "url('/images/hero-image.jpg')" }}>
           <div className="absolute inset-0 bg-black opacity-50"></div>
           <div className="container mx-auto text-center relative z-10 py-32 px-6">
             <h1 className="text-5xl font-extrabold">Swift Medicine Delivery</h1>
             <p className="mt-6 text-xl">Get your medications in a flash</p>
 
-            {/* Search Bar */}
             <div className="mt-8">
               <SearchBar onSearch={handleSearch} searchQuery={searchQuery} />
             </div>
@@ -57,20 +55,17 @@ const HomePage = () => {
           </div>
         </section>
 
-        {/* Category Section */}
         <section className="container mx-auto py-12 px-6">
           <Category />
         </section>
 
-        {/* Our Services */}
         <section className="container mx-auto py-12 px-6">
           <h2 className="text-3xl font-semibold text-gray-800 text-center mb-8">Our Services</h2>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {[
-              { title: "Fast Delivery", desc: "Get your orders delivered in under 30 minutes!" },
+            {[{ title: "Fast Delivery", desc: "Get your orders delivered in under 30 minutes!" },
               { title: "Wide Range of Products", desc: "Medicines, wellness products, and more at your fingertips." },
-              { title: "Reliable Service", desc: "Trust us to deliver high-quality healthcare essentials." }
-            ].map((service, index) => (
+              { title: "Reliable Service", desc: "Trust us to deliver high-quality healthcare essentials." }]
+              .map((service, index) => (
               <div key={index} className="bg-white rounded-lg shadow-md p-6 transition-transform transform hover:scale-105">
                 <h3 className="text-lg font-bold text-gray-700">{service.title}</h3>
                 <p className="mt-2 text-gray-600">{service.desc}</p>
@@ -79,12 +74,11 @@ const HomePage = () => {
           </div>
         </section>
 
-        {/* Featured Products */}
         <section id="products" className="container mx-auto py-12 px-6">
           <h2 className="text-3xl font-semibold text-gray-800 text-center mb-8">Featured Products</h2>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {filteredProducts.map((product, index) => (
-              <ProductCard key={index} product={product} />
+              <ProductCard key={index} {...product} />
             ))}
           </div>
         </section>

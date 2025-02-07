@@ -1,5 +1,3 @@
-'use client';
-
 interface ProductProps {
   name: string;
   description: string;
@@ -8,10 +6,10 @@ interface ProductProps {
 
 const ProductCard: React.FC<ProductProps> = ({ name, description, image }) => {
   return (
-    <div className="bg-white shadow-lg rounded-lg p-4">
-      <img className="w-full h-40 object-cover" src={image} alt={name} />
-      <h3 className="text-lg font-bold mt-2">{name}</h3>
-      <p className="text-gray-600">{description}</p>
+    <div className="product-card bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-transform transform hover:scale-105">
+      <img src={image} alt={name} className="w-full h-40 object-cover rounded-lg" />
+      <h3 className="text-lg font-bold text-gray-700 mt-4">{name}</h3>
+      <p className="mt-2 text-gray-600">{description}</p>
     </div>
   );
 };
