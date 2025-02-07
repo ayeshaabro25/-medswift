@@ -1,0 +1,58 @@
+{
+    "categories": [
+      {
+        "_id": "1",
+        "title": "Healthcare",
+        "imageUrl": "https://picsum.photos/300/200?random=1"
+      },
+      {
+        "_id": "2",
+        "title": "Vitamins",
+        "imageUrl": "https://picsum.photos/300/200?random=2"
+      },
+      {
+        "_id": "3",
+        "title": "Wellness",
+        "imageUrl": "https://picsum.photos/300/200?random=3"
+      }
+    ],
+    "products": [
+      {
+        "_id": "1",
+        "title": "Aspirin",
+        "price": 5.99,
+        "priceWithoutDiscount": 7.99,
+        "badge": "Best Seller",
+        "imageUrl": "/images/product-1.jpg",
+        "category": { "_id": "1" },
+        "description": "Pain reliever",
+        "inventory": 100,
+        "tags": ["Pain Relief", "Healthcare"]
+      },
+      {
+        "_id": "2",
+        "title": "Vitamin C",
+        "price": 10.99,
+        "priceWithoutDiscount": 12.99,
+        "badge": "New",
+        "imageUrl": "/images/product-2.jpg",
+        "category": { "_id": "2" },
+        "description": "Boosts immune system",
+        "inventory": 150,
+        "tags": ["Vitamins", "Health"]
+      },
+      {
+        "_id": "3",
+        "title": "Wellness Syrup",
+        "price": 12.99,
+        "priceWithoutDiscount": 14.99,
+        "badge": "Popular",
+        "imageUrl": "/images/product-3.jpg",
+        "category": { "_id": "3" },
+        "description": "Promotes overall wellness",
+        "inventory": 75,
+        "tags": ["Wellness", "Health"]
+      }
+    ]
+  }
+  

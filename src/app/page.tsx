@@ -1,11 +1,10 @@
-// src/app/page.tsx
 'use client';
 
 import Head from "next/head";
 import { useState } from "react";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import ProductCard from "./components/productsCard";
+import ProductCard from "./components/productsCard";  // Fixed the case sensitivity
 import SearchBar from "./components/SearchBar";
 import Category from "./components/Category";
 
@@ -19,7 +18,6 @@ const HomePage = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [filteredProducts, setFilteredProducts] = useState(products);
 
-  
   const handleSearch = (query: string) => {
     setSearchQuery(query);
 
@@ -56,7 +54,7 @@ const HomePage = () => {
 
             {/* Search Bar */}
             <div className="mt-8">
-              <SearchBar searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
+              <SearchBar onSearch={handleSearch} searchQuery={searchQuery} />
             </div>
 
             <a
@@ -96,9 +94,9 @@ const HomePage = () => {
         <section id="products" className="container mx-auto py-12 px-6">
           <h2 className="text-3xl font-semibold text-gray-800 text-center mb-8">Featured Products</h2>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {filteredProducts.map((product, index) => (
-              <ProductCard key={index} {...product} />
-            ))}
+              {filteredProducts.map((product, index) => (
+                <ProductCard key={index} product={product} /> // Passing the entire product object
+              ))}
           </div>
         </section>
       </main>
@@ -108,3 +106,4 @@ const HomePage = () => {
 };
 
 export default HomePage;
+

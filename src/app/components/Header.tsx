@@ -34,7 +34,6 @@ const Header: FC = () => (
         {/* Cart Icon */}
         <Link href="/cart" passHref>
           <div className="relative">
-            {/* Shopping cart SVG */}
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"

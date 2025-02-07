@@ -1,21 +1,26 @@
-// components/SearchBar.tsx
-'use client';
-
-import React from 'react';
+import React from "react";
 
 interface SearchBarProps {
-  searchQuery: string;
-  setSearchQuery: (query: string) => void;
+  onSearch: (query: string) => void;
+  searchQuery: string; // This prop should exist
 }
 
-export default function SearchBar({ searchQuery, setSearchQuery }: SearchBarProps) {
+const SearchBar: React.FC<SearchBarProps> = ({ onSearch, searchQuery }) => {
+  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    onSearch(event.target.value);
+  };
+
   return (
-    <input
-      type="text"
-      placeholder="Search for products..."
-      value={searchQuery} // Controlled input
-      onChange={(e) => setSearchQuery(e.target.value)} // Update query
-      className="border p-2 rounded w-full"
-    />
+    <div className="flex justify-center">
+      <input
+        type="text"
+        value={searchQuery}  // Bind searchQuery here
+        onChange={handleInputChange}
+        className="border p-2 rounded"
+        placeholder="Search products..."
+      />
+    </div>
   );
-}
+};
+
+export default SearchBar;

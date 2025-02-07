@@ -1,9 +1,8 @@
-"use client"; // Make sure this is included to use React hooks
+'use client';
 
 import React, { useState } from "react";
-import ProductCard from "./productsCard"; // Import the product card component
+import ProductCard from "./productsCard";
 
-// Example categories with products
 const categories = [
   {
     name: "Medication",
@@ -54,7 +53,7 @@ const Category = () => {
         <h2 className="text-2xl font-semibold mb-6">{category?.name}</h2>
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {category?.products.map((product, index) => (
-            <ProductCard key={index} {...product} />
+            <ProductCard key={index} product={product} />
           ))}
         </div>
       </div>
