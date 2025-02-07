@@ -1,5 +1,6 @@
-// app/product/[id]/page.tsx
-import { useParams } from 'next/navigation';
+"use client"; // 👈 Add this at the top
+
+import { useParams } from "next/navigation";
 
 export default function ProductDetail() {
   const { id } = useParams(); // Get the dynamic `id` from the route
@@ -22,3 +23,4 @@ export default function ProductDetail() {
     </div>
   );
 }
+
